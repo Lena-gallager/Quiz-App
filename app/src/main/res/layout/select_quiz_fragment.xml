@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/secondaryDarkColor"
+        android:padding="@dimen/margin_container">
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/Widget.AppCompat.TextView.Question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/select_category"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/large_margin_top"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout_category"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/category"
+            android:textColorHint="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:boxBackgroundColor="@color/primaryLightColor">
+
+            <AutoCompleteTextView
+                android:id="@+id/auto_complete_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:textColor="@color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/Widget.AppCompat.TextView.Question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/select_difficulty"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayout_category"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayout_category"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout_category" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout_difficulty"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/difficulty"
+            android:textColorHint="@color/black"
+            app:boxBackgroundColor="@color/primaryLightColor"
+            app:layout_constraintEnd_toEndOf="@+id/textView2"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+            <AutoCompleteTextView
+                android:id="@+id/auto_complete_difficulty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:textColor="@color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_take_quiz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/take_quiz"
+            style="@style/Widget.MaterialComponents.Button.MainButton"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayout_difficulty"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayout_difficulty"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout_difficulty"
+            android:layout_marginTop="@dimen/large_margin_top"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

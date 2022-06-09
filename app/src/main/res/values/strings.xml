@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Quiz API</string>
+
+    <string name="welcome">Welcome</string>
+    <string name="welcome_description">The QuizAPI is a SaaS which lets you test your knowledge on a wide variety of technical topics. You can create your own Quiz or get random set of questions for a speicifc topic including Linux, DevOps, BASH, PHP and lots more. We offer an easy to use API which allows you to embed the quiz on your own website.</string>
+    <string name="welcome_btn">Cool. Let\'s go</string>
+
+    <string name="select_category">Select a category</string>
+    <string name="category">Category</string>
+
+    <string name="no_matter">No matter</string>
+
+    <string name="linux">Linux</string>
+    <string name="docker">Docker</string>
+    <string name="cms">CMS</string>
+    <string name="sql">SQL</string>
+    <string name="code">Code</string>
+    <string name="devops">DevOps</string>
+
+    <string name="select_difficulty">Select a difficulty</string>
+    <string name="difficulty">Difficulty</string>
+
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
+
+    <string name="take_quiz">Take a quiz</string>
+
+
+    <string-array name="categories">
+        <item>No matter</item>
+        <item>Linux</item>
+        <item>Docker</item>
+        <item>CMS</item>
+        <item>SQL</item>
+        <item>Code</item>
+        <item>DevOps</item>
+    </string-array>
+
+    <string-array name="difficulty">
+        <item>No matter</item>
+        <item>Easy</item>
+        <item>Medium</item>
+        <item>Hard</item>
+    </string-array>
+
+    <string name="next">Next</string>
+    <string name="submit">Submit</string>
+</resources>

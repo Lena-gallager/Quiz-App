@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.AppCompat.TextView.Header" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">40sp</item>
+        <item name="fontFamily">@font/anton</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Widget.AppCompat.TextView.Description" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">20sp</item>
+        <item name="fontFamily">@font/almendra</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Widget.AppCompat.TextView.Question" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/amaranth</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.Button.MainButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">20sp</item>
+        <item name="cornerRadius">40dp</item>
+        <item name="fontFamily">@font/atma</item>
+    </style>
+
+    <style name="Widget.RadioButton" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.RadioButton</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/secondaryLightColor</item>
+    </style>
+
+    <style name="ThemeOverlay.App.RadioButton" parent="">
+        <item name="colorOnSurface">@color/primaryLightColor</item>
+        <item name="colorSecondary">@color/primaryDarkColor</item>
+    </style>
+</resources>

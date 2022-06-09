@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment">
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.quizapi.ui.WelcomeFragment"
+        android:label="WelcomeFragment"
+        tools:layout="@layout/welcome_fragment">
+        <action
+            android:id="@+id/action_welcomeFragment_to_selectQuizFragment"
+            app:destination="@id/selectQuizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectQuizFragment"
+        android:name="com.example.quizapi.ui.SelectQuizFragment"
+        android:label="SelectQuizFragment"
+        tools:layout="@layout/select_quiz_fragment">
+        <action
+            android:id="@+id/action_selectQuizFragment_to_questionsFragment"
+            app:destination="@id/questionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionsFragment"
+        android:name="com.example.quizapi.ui.QuestionsFragment"
+        android:label="QuestionsFragment"
+        tools:layout="@layout/questions_fragment">
+        <argument
+            android:name="category"
+            app:argType="string"
+            android:defaultValue="no matter" />
+        <argument
+            android:name="difficulty"
+            app:argType="string"
+            android:defaultValue="no matter" />
+        <action
+            android:id="@+id/action_questionsFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.quizapi.ui.ResultFragment"
+        android:label="ResultFragment"
+        tools:layout="@layout/result_fragment">
+        <argument
+            android:name="correctAnswers"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="numOfQuestions"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.example.quizapi.viewmodels.QuestionsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/secondaryDarkColor"
+        android:padding="@dimen/margin_container">
+
+        <TextView
+            android:id="@+id/txt_question_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sumana_bold"
+            android:text='@{"Question " + viewModel.thisNumberOfQuestion + " of " + viewModel.quiz.size()}'
+            android:textColor="@color/secondaryColor"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_question"
+            style="@style/Widget.AppCompat.TextView.Question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.oneQuiz.question}"
+            tools:text="Which command will you use to display the first user?"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/default_margin_top"
+            app:layout_constraintTop_toBottomOf="@+id/txt_question_count" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/btn_next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_question">
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/large_margin_top"
+                android:checkedButton="@id/answer_b_correct"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_question">
+
+                <RadioButton
+                    android:id="@+id/answer_a_correct"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text='@{viewModel.oneQuiz.answers["answer_a"]}'
+                    android:textColor="@color/white" />
+
+                <RadioButton
+                    android:id="@+id/answer_b_correct"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text='@{viewModel.oneQuiz.answers["answer_b"]}' />
+
+                <RadioButton
+                    android:id="@+id/answer_c_correct"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text='@{viewModel.oneQuiz.answers["answer_c"]}'
+                    android:visibility='@{viewModel.oneQuiz.answers["answer_c"] == null ? View.GONE : View.VISIBLE}' />
+
+                <RadioButton
+                    android:id="@+id/answer_d_correct"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text='@{viewModel.oneQuiz.answers["answer_d"]}'
+                    android:visibility='@{viewModel.oneQuiz.answers["answer_d"] == null ? View.GONE : View.VISIBLE}' />
+            </RadioGroup>
+        </ScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_next"
+            style="@style/Widget.MaterialComponents.Button.MainButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
